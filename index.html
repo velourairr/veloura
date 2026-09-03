@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloura | فروشگاه آنلاین</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      background: #faf8f6;
+      color: #2d2523;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eee5df;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      font-weight: 400;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid #e8ddd6;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    /* Navigation */
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px 14px;
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    nav a {
+      color: #6f625d;
+      font-size: 14px;
+    }
+
+    nav a:first-child {
+      color: #2d2523;
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 22px auto;
+      padding: 55px 30px;
+      min-height: 330px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #eadbd2, #f8eee8);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      color: #80685d;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      color: #6e5e57;
+      margin-bottom: 24px;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #2d2523;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .section-link {
+      font-size: 13px;
+      color: #80685d;
+    }
+
+    /* Categories */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #eee4de;
+      border-radius: 18px;
+      padding: 25px 15px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+    }
+
+    .category-icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .category strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .category small {
+      color: #8a7b74;
+      font-size: 12px;
+    }
+
+    /* Products */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #eee4de;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+   
+     .product-image {
+  height: 220px;
+  background: #f4f0ed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #2d2523;
+      color: white;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 10px;
+    }
+
+    .product-info {
+      padding: 15px;
+    }
+
+    .product-name {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .product-desc {
+      color: #8b7d76;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .new-price {
+      font-weight: 800;
+    }
+
+    .old-price {
+      color: #aaa;
+      font-size: 12px;
+      text-decoration: line-through;
+    }
+
+    /* Discount Banner */
+    .discount {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 35px 25px;
+      border-radius: 25px;
+      background: #2d2523;
+      color: white;
+      text-align: center;
+    }
+
+    .discount h2 {
+      font-size: 27px;
+      margin-bottom: 7px;
+    }
+
+    .discount p {
+      color: #d8cbc5;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .discount .btn {
+      background: white;
+      color: #2d2523;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      background: #211b19;
+      color: white;
+      padding: 40px 20px 25px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #b9aaa3;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #3a312e;
+      color: #887b75;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav {
+        padding: 0 15px 12px;
+        gap: 18px;
+      }
+
+      .hero {
+        margin: 15px;
+        padding: 38px 23px;
+        min-height: 390px;
+        border-radius: 22px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .section {
+        margin: 38px auto;
+        padding: 0 15px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .product-image {
+        height: 165px;
+        font-size: 45px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .discount {
+        margin: 35px 15px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Veloura<span>.</span></div>
+
+      <div class="header-icons">
+        <a href="#" class="icon-btn">♡</a>
+        <a href="#" class="icon-btn">🛒</a>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#">خانه</a>
+      <a href="#">جدیدترین‌ها</a>
+      <a href="#">لباس زنانه</a>
+      <a href="#">اکسسوری</a>
+      <a href="#">تخفیف‌ها</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">COLLECTION 2026</div>
+        <h1>زیبایی، ساده‌تر از همیشه.</h1>
+        <p>
+          مجموعه‌ای از محصولات شیک و خاص برای استایلی که کاملاً متعلق به توست.
+        </p>
+        <a href="#" class="btn">مشاهده محصولات</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-title">دسته‌بندی‌ها</h2>
+        <a href="#" class="section-link">مشاهده همه</a>
+      </div>
+
+      <div class="categories">
+
+        <a href="#" class="category">
+          <div class="category-icon">👗</div>
+          <strong>لباس</strong>
+          <small>مد و استایل</small>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">👜</div>
+          <strong>کیف</strong>
+          <small>خاص و شیک</small>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">💍</div>
+          <strong>اکسسوری</strong>
+          <small>جزئیات جذاب</small>
+        </a>
+
+        <a href="#" class="category">
+          <div class="category-icon">👠</div>
+          <strong>کفش</strong>
+          <small>استایل متفاوت</small>
+        </a>
+
+      </div>
+    </section>
+
+    <section class="section">
+
+      <div class="section-head">
+        <h2 class="section-title">محبوب‌ترین‌ها</h2>
+        <a href="#" class="section-link">همه محصولات</a>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <span class="badge">جدید</span>
+         <div class="product-image">
+<img src="dress.jpg" alt="لباس کودک">
+</div>          <div class="product-info">
+            <div class="product-name">پیراهن مینیمال</div>
+            <div class="product-desc">طراحی ساده و ظریف</div>
+            <div class="price">
+              <span class="new-price">۱,۸۹۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product">
+          <span class="badge">٪۲۰ تخفیف</span>
+<div class="product-image">
+  <img src="dress1.jpg.jpeg" alt="لباس کودک">
+</div>
+<div class="product-info">
+           <div class="product-name">ست پاییزه میو میو</div>
+          <div class="product-desc">دورس ۱۰۰٪ نخ پنبه • قواره لش</div>
+            <div class="price">
+  <span class="new-price">۱,۸۰۰,۰۰۰ تومان</span>
+</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">💍</div>
+          <div class="product-info">
+            <div class="product-name">انگشتر ژوپینگ</div>
+            <div class="product-desc">ظریف و شیک • مناسب استفاده روزمره</div>
+<div class="price">
+  <span class="new-price">۹۰۰,۰۰۰ تومان</span>
+</div>
+</div>
+        </article>
+
+        <article class="product">
+          <span class="badge">پرفروش</span>
+    <div class="product-image">
+  <span style="font-size: 64px;">👕</span>
+</div>          <div class="product-info">
+           <div class="product-name">لباس ورزشی</div>
+            <div class="product-desc">راحت و مناسب ورزش و استایل روزمره</div>
+            <div class="price">
+              <span class="new-price">۱,۵۰۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="discount">
+      <h2>تخفیف ویژه برای تو ✨</h2>
+      <p>برای اولین خریدت از کد VEL20 استفاده کن و ۲۰٪ تخفیف بگیر.</p>
+      <a href="#" class="btn">خرید با تخفیف</a>
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <h3>Veloura.</h3>
+        <p>
+          فروشگاهی برای انتخاب‌های خاص، ساده و زیبا.
+        </p>
+      </div>
+
+      <div>
+        <h3>لینک‌ها</h3>
+        <a href="#">درباره ما</a>
+        <a href="#">تماس با ما</a>
+        <a href="#">قوانین و مقررات</a>
+      </div>
+
+      <div>
+        <h3>پشتیبانی</h3>
+        <p>شنبه تا پنجشنبه</p>
+        <p>۹ صبح تا ۸ شب</p>
+        <p>پاسخگویی آنلاین</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Veloura — تمامی حقوق محفوظ است.
+    </div>
+
+  </footer>
+
+</body>
+</html>
