@@ -116,7 +116,13 @@
 
   <main>
     <h1>سبد خرید</h1>
-
+<div id="emptyCart" style="display:none; text-align:center; padding:40px 20px;">
+  <h2>سبد خرید شما خالی است 🛒</h2>
+  <p style="color:#777; margin-top:10px;">هنوز محصولی به سبد خرید اضافه نکرده‌اید.</p>
+  <a href="products.html" class="button" style="max-width:250px; margin:20px auto 0;">
+    مشاهده محصولات
+  </a>
+</div>
     <div class="cart-box">
       <div class="product-name">ست پاییزه میو میو</div>
 <div class="product-price">۱,۸۰۰,۰۰۰ تومان</div>
@@ -181,6 +187,7 @@ window.onload = function() {
     document.querySelector(".quantity").style.display = "none";
     document.querySelector(".remove-button").style.display = "none";
     document.querySelector(".total").style.display = "none";
+    document.getElementById("emptyCart").style.display = "block";
   }
 };
   
