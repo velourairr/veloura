@@ -119,7 +119,7 @@
 
     <div class="cart-box">
       <div class="product-name">ست پاییزه میو میو</div>
-<div class="product-price">۱,۴۴۰,۰۰۰ تومان</div>
+<div class="product-price">۱,۸۰۰,۰۰۰ تومان</div>
 
 <div class="quantity">
   <button onclick="decreaseQuantity()">−</button>
@@ -127,10 +127,11 @@
   <button onclick="increaseQuantity()">+</button>
 </div>
 
-      <div class="total">
+<button class="remove-button" onclick="removeProduct()">حذف محصول 🗑️</button>
+
+<div class="total">
   مجموع: <span id="totalPrice">۱,۸۰۰,۰۰۰</span> تومان
 </div>
-
       <a href="products.html" class="button">ادامه خرید</a>
     </div>
   </main>
@@ -155,11 +156,20 @@
   }
 
   function decreaseQuantity() {
-    if (quantity > 1) {
-      quantity--;
-      updateCart();
-    }
+  if (quantity > 1) {
+    quantity--;
+    updateCart();
   }
+}
+
+function removeProduct() {
+  document.querySelector(".product-name").style.display = "none";
+  document.querySelector(".product-price").style.display = "none";
+  document.querySelector(".quantity").style.display = "none";
+  document.querySelector(".remove-button").style.display = "none";
+  document.querySelector(".total").style.display = "none";
+}
+  
 </script>
 </body>
 </html>
