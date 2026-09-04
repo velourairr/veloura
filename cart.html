@@ -163,6 +163,8 @@
 }
 
 function removeProduct() {
+  localStorage.removeItem("velouraCart");
+
   document.querySelector(".product-name").style.display = "none";
   document.querySelector(".product-price").style.display = "none";
   document.querySelector(".quantity").style.display = "none";
