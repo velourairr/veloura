@@ -151,7 +151,18 @@
 <script>
   document.querySelector('.button').addEventListener('click', function(event) {
     event.preventDefault();
+
+    const product = {
+      name: 'ست پاییزه میو میو',
+      price: 1440000,
+      image: 'dress.jpg',
+      quantity: 1
+    };
+
+    localStorage.setItem('velouraCart', JSON.stringify(product));
+
     alert('محصول به سبد خرید اضافه شد 🛒');
+
     window.location.href = 'cart.html';
   });
 </script>
