@@ -119,7 +119,13 @@
 
     <div class="cart-box">
       <div class="product-name">ست پاییزه میو میو</div>
-      <div class="product-price">۱,۴۴۰,۰۰۰ تومان</div>
+<div class="product-price">۱,۴۴۰,۰۰۰ تومان</div>
+
+<div class="quantity">
+  <button onclick="decreaseQuantity()">−</button>
+  <span id="quantity">1</span>
+  <button onclick="increaseQuantity()">+</button>
+</div>
 
       <div class="total">
         مجموع: ۱,۴۴۰,۰۰۰ تومان
@@ -133,6 +139,21 @@
     <h2>Veloura.</h2>
     <p>فروشگاهی برای انتخاب‌های خاص، ساده و زیبا.</p>
   </footer>
+<script>
+  let quantity = 1;
+
+  function increaseQuantity() {
+    quantity++;
+    document.getElementById("quantity").textContent = quantity;
+  }
+
+  function decreaseQuantity() {
+    if (quantity > 1) {
+      quantity--;
+      document.getElementById("quantity").textContent = quantity;
+    }
+  }
+</script>
 
 </body>
 </html>
