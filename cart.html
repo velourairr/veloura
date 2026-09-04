@@ -128,8 +128,8 @@
 </div>
 
       <div class="total">
-        مجموع: ۱,۴۴۰,۰۰۰ تومان
-      </div>
+  مجموع: <span id="totalPrice">۱,۸۰۰,۰۰۰</span> تومان
+</div>
 
       <a href="products.html" class="button">ادامه خرید</a>
     </div>
@@ -141,19 +141,25 @@
   </footer>
 <script>
   let quantity = 1;
+  const price = 1800000;
+
+  function updateCart() {
+    document.getElementById("quantity").textContent = quantity;
+    document.getElementById("totalPrice").textContent =
+      (price * quantity).toLocaleString("fa-IR");
+  }
 
   function increaseQuantity() {
     quantity++;
-    document.getElementById("quantity").textContent = quantity;
+    updateCart();
   }
 
   function decreaseQuantity() {
     if (quantity > 1) {
       quantity--;
-      document.getElementById("quantity").textContent = quantity;
+      updateCart();
     }
   }
 </script>
-
 </body>
 </html>
