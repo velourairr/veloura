@@ -142,20 +142,20 @@
   </footer>
 <script>
   let quantity = 1;
-  const price = 1800000;
+const price = 1800000;
 
-  function updateCart() {
-    document.getElementById("quantity").textContent = quantity;
-    document.getElementById("totalPrice").textContent =
-      (price * quantity).toLocaleString("fa-IR");
-  }
+function updateCart() {
+  document.getElementById("quantity").textContent = quantity;
+  document.getElementById("totalPrice").textContent =
+    (price * quantity).toLocaleString("fa-IR");
+}
 
-  function increaseQuantity() {
-    quantity++;
-    updateCart();
-  }
+function increaseQuantity() {
+  quantity++;
+  updateCart();
+}
 
-  function decreaseQuantity() {
+function decreaseQuantity() {
   if (quantity > 1) {
     quantity--;
     updateCart();
@@ -171,6 +171,18 @@ function removeProduct() {
   document.querySelector(".remove-button").style.display = "none";
   document.querySelector(".total").style.display = "none";
 }
+
+window.onload = function() {
+  const cart = localStorage.getItem("velouraCart");
+
+  if (!cart) {
+    document.querySelector(".product-name").style.display = "none";
+    document.querySelector(".product-price").style.display = "none";
+    document.querySelector(".quantity").style.display = "none";
+    document.querySelector(".remove-button").style.display = "none";
+    document.querySelector(".total").style.display = "none";
+  }
+};
   
 </script>
 </body>
