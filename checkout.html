@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثبت سفارش | Veloura</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f6f4;
+      color: #242220;
+    }
+    header {
+      background: #fff;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+      color: #242220;
+    }
+    .back {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+    main {
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #eee;
+    }
+    h1 {
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    input,
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+    .button {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border: 0;
+      background: #242220;
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">Veloura</a>
+    <a href="cart.html" class="back">بازگشت به سبد خرید</a>
+  </nav>
+</header>
+<main>
+  <div class="box">
+    <h1>ثبت سفارش</h1>
+    <form>
+      <label>نام و نام خانوادگی</label>
+      <input type="text" placeholder="مثلاً سارا احمدی">
+      <label>شماره موبایل</label>
+      <input type="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷">
+      <label>کد پستی</label>
+      <input type="text" placeholder="کد پستی ۱۰ رقمی">
+      <label>آدرس کامل</label>
+      <textarea placeholder="استان، شهر، خیابان، کوچه، پلاک و واحد"></textarea>
+      <label>توضیحات سفارش</label>
+      <textarea placeholder="اگر توضیح خاصی درباره سفارش دارید بنویسید"></textarea>
+      <button type="submit" class="button">
+        ثبت سفارش
+      </button>
+    </form>
+  </div>
+</main>
+</body>
+</html>
