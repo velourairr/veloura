@@ -34,9 +34,15 @@
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: 700;
-    }
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 95px;
+  height: auto;
+  display: block;
+}
 
     .back {
       color: #666;
@@ -191,7 +197,9 @@
 
   <header>
     <nav class="nav">
-      <a href="index.html" class="logo">Veloura.</a>
+      <a href="index.html" class="logo">
+  <img src="veloura-logo.jpg" alt="Veloura">
+</a>
       <a href="products.html" class="back">← محصولات</a>
     </nav>
   </header>

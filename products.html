@@ -43,11 +43,15 @@
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+  display: flex;
+  align-items: center;
+}
 
+.logo img {
+  width: 95px;
+  height: auto;
+  display: block;
+}
     .nav-links {
       display: flex;
       gap: 25px;
@@ -252,7 +256,9 @@
 
   <header>
     <nav class="nav">
-      <a href="index.html" class="logo">Veloura.</a>
+      <a href="index.html" class="logo">
+  <img src="veloura-logo.jpg" alt="Veloura">
+</a>
 
       <div class="nav-links">
         <a href="index.html">خانه</a>
