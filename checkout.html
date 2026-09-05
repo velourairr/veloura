@@ -113,5 +113,29 @@
     </form>
   </div>
 </main>
+<script>
+document.querySelector("form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.querySelectorAll("input")[0].value;
+  const phone = document.querySelectorAll("input")[1].value;
+  const postal = document.querySelectorAll("input")[2].value;
+  const address = document.querySelectorAll("textarea")[0].value;
+  const note = document.querySelectorAll("textarea")[1].value;
+
+  const message =
+    "سلام Veloura 🌷%0A%0A" +
+    "🛍️ سفارش جدید%0A" +
+    "👤 نام: " + name + "%0A" +
+    "📱 موبایل: " + phone + "%0A" +
+    "📮 کد پستی: " + postal + "%0A" +
+    "📍 آدرس: " + address + "%0A" +
+    "📝 توضیحات: " + note;
+
+  const whatsapp = "https://wa.me/989194699499?text=" + message;
+
+  window.location.href = whatsapp;
+});
+</script>
 </body>
 </html>
