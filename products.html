@@ -122,37 +122,48 @@
     }
 
     .product {
-      background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #eee;
-      transition: transform .25s, box-shadow .25s;
-    }
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  transition: transform .25s, box-shadow .25s;
+}
 
     .product:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0,0,0,.07);
     }
 
-    .product-image {
-      height: 260px;
-      background: #f0eeeb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 70px;
-    }
+   .product-image {
+  height: 260px;
+  background: #f0eeeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px 18px 0 0;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
     .product-info {
-      padding: 17px;
-    }
-
+  padding: 20px;
+}
     .tag {
-      display: inline-block;
-      font-size: 11px;
-      color: #777;
-      margin-bottom: 5px;
-    }
+  display: inline-block;
+  font-size: 11px;
+  color: #777;
+  background: #f5f3f0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
 
     .product h2 {
       font-size: 17px;
@@ -166,10 +177,11 @@
     }
 
     .price {
-      margin-top: 12px;
-      font-size: 16px;
-      font-weight: 700;
-    }
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
 
     .old-price {
       font-size: 12px;
@@ -179,16 +191,23 @@
       font-weight: normal;
     }
 
-    .button {
-      display: block;
-      margin-top: 13px;
-      background: #242220;
-      color: #fff;
-      text-align: center;
-      padding: 9px;
-      border-radius: 9px;
-      font-size: 13px;
-    }
+   .button {
+  display: block;
+  margin-top: 15px;
+  background: #242220;
+  color: #fff;
+  text-align: center;
+  padding: 11px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: opacity .2s, transform .2s;
+}
+
+.button:hover {
+  opacity: .9;
+  transform: translateY(-2px);
+}
 
     footer {
       background: #242220;
@@ -221,12 +240,7 @@
         display: none;
       }
 
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        padding: 0 12px 50px;
-      }
-
+      .د
       .product-image {
         height: 190px;
         font-size: 55px;
@@ -316,8 +330,8 @@
     </article>
     <article class="product">
     <div class="product-image">
-        تصویر شهرزاد
-    </div>
+    <img src="shahrzad.JPG" alt="مدل شهرزاد">
+</div>
     <div class="product-info">
         <span class="tag">لباس</span>
         <h3>مدل شهرزاد</h3>
