@@ -218,6 +218,7 @@
 <div class="product-name" id="cartProductName">ست پاییزه میو میو</div>
 <div class="product-price" id="cartProductPrice">۱,۸۰۰,۰۰۰ تومان</div>
 <div class="product-size" id="cartProductSize"></div>
+<div class="product-color" id="cartProductColor"></div>
 <div class="quantity">
   <button onclick="decreaseQuantity()">−</button>
   <span id="quantity">1</span>
@@ -240,58 +241,66 @@
   </footer>
 <script>
   let quantity = 1;
-const price = 1800000;
+  let price = 0;
 
-function updateCart() {
-  document.getElementById("quantity").textContent = quantity;
-  document.getElementById("totalPrice").textContent =
-    (price * quantity).toLocaleString("fa-IR");
-}
+  function updateCart() {
+    document.getElementById("quantity").textContent = quantity;
+    document.getElementById("totalPrice").textContent =
+      (price * quantity).toLocaleString("fa-IR");
+  }
 
-function increaseQuantity() {
-  quantity++;
-  updateCart();
-}
-
-function decreaseQuantity() {
-  if (quantity > 1) {
-    quantity--;
+  function increaseQuantity() {
+    quantity++;
     updateCart();
   }
-}
 
-function removeProduct() {
-  localStorage.removeItem("velouraCart");
+  function decreaseQuantity() {
+    if (quantity > 1) {
+      quantity--;
+      updateCart();
+    }
+  }
 
-  document.querySelector(".product-name").style.display = "none";
-  document.querySelector(".product-price").style.display = "none";
-  document.querySelector(".quantity").style.display = "none";
-  document.querySelector(".remove-button").style.display = "none";
-  document.querySelector(".total").style.display = "none";
-}
+  function removeProduct() {
+    localStorage.removeItem("velouraCart");
 
-window.onload = function() {
-  const cart = localStorage.getItem("velouraCart");
-
-  if (!cart) {
     document.querySelector(".product-name").style.display = "none";
     document.querySelector(".product-price").style.display = "none";
     document.querySelector(".quantity").style.display = "none";
     document.querySelector(".remove-button").style.display = "none";
     document.querySelector(".total").style.display = "none";
     document.getElementById("emptyCart").style.display = "block";
-    return;
   }
 
-  const product = JSON.parse(cart);
+  window.onload = function() {
+    const cart = localStorage.getItem("velouraCart");
 
-  document.getElementById("cartProductImage").src = product.image;
-document.getElementById("cartProductImage").alt = product.name;
-document.getElementById("cartProductName").textContent = product.name;
-document.getElementById("cartProductPrice").textContent =
-  product.price.toLocaleString("fa-IR") + " تومان";
-  document.getElementById("cartProductSize").textContent =
-  "سایز: " + product.size;
+    if (!cart) {
+      document.querySelector(".product-name").style.display = "none";
+      document.querySelector(".product-price").style.display = "none";
+      document.querySelector(".quantity").style.display = "none";
+      document.querySelector(".remove-button").style.display = "none";
+      document.querySelector(".total").style.display = "none";
+      document.getElementById("emptyCart").style.display = "block";
+      return;
+    }
+
+    const product = JSON.parse(cart);
+
+    price = product.price;
+
+    document.getElementById("cartProductImage").src = product.image;
+    document.getElementById("cartProductImage").alt = product.name;
+    document.getElementById("cartProductName").textContent = product.name;
+    document.getElementById("cartProductPrice").textContent =
+      product.price.toLocaleString("fa-IR") + " تومان";
+    document.getElementById("cartProductSize").textContent =
+      "سایز: " + product.size;
+    document.getElementById("cartProductColor").textContent =
+      "رنگ: " + product.color;
+
+    updateCart();
+  };
 </script>
 </body>
 </html>
