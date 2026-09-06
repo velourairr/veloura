@@ -123,6 +123,9 @@ document.querySelector("form").addEventListener("submit", function(event) {
   const address = document.querySelectorAll("textarea")[0].value;
   const note = document.querySelectorAll("textarea")[1].value;
 
+  const cart = localStorage.getItem("velouraCart");
+  const product = cart ? JSON.parse(cart) : null;
+
   const message =
     "سلام Veloura 🌷%0A%0A" +
     "🛍️ سفارش جدید%0A" +
@@ -130,7 +133,11 @@ document.querySelector("form").addEventListener("submit", function(event) {
     "📱 موبایل: " + phone + "%0A" +
     "📮 کد پستی: " + postal + "%0A" +
     "📍 آدرس: " + address + "%0A" +
-    "📝 توضیحات: " + note;
+    "📝 توضیحات: " + note + "%0A%0A" +
+    "📦 محصول: " + (product ? product.name : "ثبت نشده") + "%0A" +
+    "💰 قیمت: " + (product ? product.price.toLocaleString("fa-IR") + " تومان" : "ثبت نشده") + "%0A" +
+    "📏 سایز: " + (product ? product.size : "ثبت نشده") + "%0A" +
+    "🎨 رنگ: " + (product ? product.color : "ثبت نشده");
 
   const whatsapp = "https://wa.me/989194699499?text=" + message;
 
