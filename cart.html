@@ -216,7 +216,7 @@
     <div class="cart-box">
       <img id="cartProductImage" src="dress.jpg" alt="ست پاییزه میو میو" class="cart-product-image">
 <div class="product-name" id="cartProductName">ست پاییزه میو میو</div>
-<div class="product-price">۱,۸۰۰,۰۰۰ تومان</div>
+<div class="product-price" id="cartProductPrice">۱,۸۰۰,۰۰۰ تومان</div>
 
 <div class="quantity">
   <button onclick="decreaseQuantity()">−</button>
@@ -288,7 +288,8 @@ window.onload = function() {
   document.getElementById("cartProductImage").src = product.image;
 document.getElementById("cartProductImage").alt = product.name;
 document.getElementById("cartProductName").textContent = product.name;
-  
+document.getElementById("cartProductPrice").textContent =
+  product.price.toLocaleString("fa-IR") + " تومان";
 </script>
 </body>
 </html>
