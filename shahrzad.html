@@ -180,7 +180,13 @@
   <option value="۶۵">۶۵</option>
   <option value="۷۰">۷۰</option>
 </select>
-
+<label for="color">انتخاب رنگ:</label>
+<select id="color">
+  <option value="">رنگ را انتخاب کنید</option>
+  <option value="نوک‌مدادی">نوک‌مدادی</option>
+  <option value="سرمه‌ای">سرمه‌ای</option>
+  <option value="قهوه‌ای">قهوه‌ای</option>
+</select>
 <a href="#" class="button">افزودن به سبد خرید</a>
     </div>
   </main>
@@ -193,17 +199,21 @@
     event.preventDefault();
 
     const size = document.getElementById('size').value;
-
+const color = document.getElementById('color').value;
 if (!size) {
   alert('لطفاً سایز را انتخاب کنید 👕');
   return;
 }
-
+if (!color) {
+  alert('لطفاً رنگ را انتخاب کنید 🎨');
+  return;
+}
 const product = {
   name: 'ست شهرزاد',
   price: 2350000,
   image: 'shahrzad.JPG',
   size: size,
+  color: color,
   quantity: 1
 };
     localStorage.setItem('velouraCart', JSON.stringify(product));
