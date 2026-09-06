@@ -168,10 +168,20 @@
   • سه رنگ: نوک‌مدادی، سرمه‌ای، قهوه‌ای
   • سایزها: ۵۵، ۶۰، ۶۵، ۷۰
 </p>
-      <div class="price">
+    <div class="price">
   ۲,۳۵۰,۰۰۰ تومان
 </div>
-      <a href="#" class="button">افزودن به سبد خرید</a>
+
+<label for="size">انتخاب سایز:</label>
+<select id="size">
+  <option value="">سایز را انتخاب کنید</option>
+  <option value="۵۵">۵۵</option>
+  <option value="۶۰">۶۰</option>
+  <option value="۶۵">۶۵</option>
+  <option value="۷۰">۷۰</option>
+</select>
+
+<a href="#" class="button">افزودن به سبد خرید</a>
     </div>
   </main>
   <footer>
@@ -182,10 +192,18 @@
   document.querySelector('.button').addEventListener('click', function(event) {
     event.preventDefault();
 
-    const product = {
+    const size = document.getElementById('size').value;
+
+if (!size) {
+  alert('لطفاً سایز را انتخاب کنید 👕');
+  return;
+}
+
+const product = {
   name: 'مدل شهرزاد',
   price: 2350000,
-  image: 'dress.jpg',
+  image: 'shahrzad.JPG',
+  size: size,
   quantity: 1
 };
     localStorage.setItem('velouraCart', JSON.stringify(product));
