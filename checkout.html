@@ -107,7 +107,9 @@
 <input type="text" placeholder="کد پستی ۱۰ رقمی" required>
 
 <label>آدرس کامل</label>
-<textarea placeholder="استان، شهر، خیابان، کوچه، پلاک و واحد" required></textarea>      <label>توضیحات سفارش</label>
+<textarea placeholder="استان، شهر، خیابان، کوچه، پلاک و واحد" required></textarea>
+
+<label>توضیحات سفارش</label>
       <textarea placeholder="اگر توضیح خاصی درباره سفارش دارید بنویسید"></textarea>
       <button type="submit" class="button">
         ثبت سفارش
@@ -128,6 +130,14 @@ document.querySelector("form").addEventListener("submit", function(event) {
   const cart = localStorage.getItem("velouraCart");
   const product = cart ? JSON.parse(cart) : null;
 
+  if (!product) {
+    alert("سبد خرید شما خالی است 🛒");
+    window.location.href = "products.html";
+    return;
+  }
+
+  const quantity = product.quantity || 1;
+
   const message =
     "سلام Veloura 🌷%0A%0A" +
     "🛍️ سفارش جدید%0A" +
@@ -136,10 +146,12 @@ document.querySelector("form").addEventListener("submit", function(event) {
     "📮 کد پستی: " + postal + "%0A" +
     "📍 آدرس: " + address + "%0A" +
     "📝 توضیحات: " + note + "%0A%0A" +
-    "📦 محصول: " + (product ? product.name : "ثبت نشده") + "%0A" +
-    "💰 قیمت: " + (product ? product.price.toLocaleString("fa-IR") + " تومان" : "ثبت نشده") + "%0A" +
-    "📏 سایز: " + (product ? product.size : "ثبت نشده") + "%0A" +
-    "🎨 رنگ: " + (product ? product.color : "ثبت نشده");
+    "📦 محصول: " + product.name + "%0A" +
+    "🔢 تعداد: " + quantity + "%0A" +
+    "💰 قیمت هر عدد: " + product.price.toLocaleString("fa-IR") + " تومان%0A" +
+    "💵 مجموع: " + (product.price * quantity).toLocaleString("fa-IR") + " تومان%0A" +
+    "📏 سایز: " + product.size + "%0A" +
+    "🎨 رنگ: " + product.color;
 
   const whatsapp = "https://wa.me/989194699499?text=" + message;
 
