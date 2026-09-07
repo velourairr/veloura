@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جوراب | Veloura</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f6f3;
+      color: #242220;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 35px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .category {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 18px;
+      padding: 35px 20px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 600px) {
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="products.html">محصولات</a>
+      <a href="about.html">درباره ما</a>
+    </div>
+
+    <strong>Veloura</strong>
+  </nav>
+</header>
+
+<main class="page">
+
+  <h1>جوراب 🧦</h1>
+
+  <div class="categories">
+
+  <a href="long-socks.html" class="category">
+    ساق بلند 🧦
+  </a>
+
+  <a href="ankle-socks.html" class="category">
+    نیم‌ساق 🧦
+  </a>
+
+  <a href="short-socks.html" class="category">
+    ساق کوتاه 🧦
+  </a>
+
+  <a href="no-show-socks.html" class="category">
+    کالج 🧦
+  </a>
+
+</div>
+
+</html>
