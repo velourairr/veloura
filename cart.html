@@ -263,6 +263,9 @@
 
   function removeProduct() {
     localStorage.removeItem("velouraCart");
+    document.getElementById("cartProductImage").style.display = "none";
+document.getElementById("cartProductSize").style.display = "none";
+document.getElementById("cartProductColor").style.display = "none";
 
     document.querySelector(".product-name").style.display = "none";
     document.querySelector(".product-price").style.display = "none";
@@ -283,6 +286,9 @@
       document.querySelector(".total").style.display = "none";
       document.getElementById("emptyCart").style.display = "block";
       document.getElementById("checkoutButton").style.display = "none";
+      document.getElementById("cartProductImage").style.display = "none";
+document.getElementById("cartProductSize").style.display = "none";
+document.getElementById("cartProductColor").style.display = "none";
       return;
     }
 
