@@ -165,10 +165,27 @@
         دورس ۱۰۰٪ نخ پنبه • قواره لش
       </p>
       <div class="price">
-        ۱,۴۴۰,۰۰۰ تومان
-        <span class="old-price">۱,۸۰۰,۰۰۰</span>
-      </div>
-      <a href="#" class="button">افزودن به سبد خرید</a>
+  ۱,۸۰۰,۰۰۰ تومان
+</div>
+
+<label for="size">انتخاب سایز:</label>
+<select id="size">
+  <option value="">سایز را انتخاب کنید</option>
+  <option value="۴۵">۴۵</option>
+  <option value="۵۰">۵۰</option>
+  <option value="۵۵">۵۵</option>
+  <option value="۶۰">۶۰</option>
+  <option value="۶۵">۶۵</option>
+</select>
+
+<label for="color">انتخاب رنگ:</label>
+<select id="color">
+  <option value="">رنگ را انتخاب کنید</option>
+  <option value="قهوه‌ای">قهوه‌ای</option>
+  <option value="سرمه‌ای">سرمه‌ای</option>
+</select>
+
+<a href="#" class="button">افزودن به سبد خرید</a>
     </div>
   </main>
   <footer>
@@ -192,6 +209,39 @@
 
     window.location.href = 'cart.html';
   });
+</script>
+<script>
+document.querySelector('.button').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const size = document.getElementById('size').value;
+  const color = document.getElementById('color').value;
+
+  if (!size) {
+    alert('لطفاً سایز را انتخاب کنید 👕');
+    return;
+  }
+
+  if (!color) {
+    alert('لطفاً رنگ را انتخاب کنید 🎨');
+    return;
+  }
+
+  const product = {
+    name: 'ست پاییزه میو میو',
+    price: 1800000,
+    image: 'dress.jpg',
+    size: size,
+    color: color,
+    quantity: 1
+  };
+
+  localStorage.setItem('velouraCart', JSON.stringify(product));
+
+  alert('محصول به سبد خرید اضافه شد 🛒');
+
+  window.location.href = 'cart.html';
+});
 </script>
 </body>
 </html>
