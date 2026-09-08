@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ساق‌دار دوکش اسپرت | Veloura</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, sans-serif;
+      background: #faf9f7;
+      color: #242220;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav {
+      max-width: 900px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 95px;
+      height: auto;
+      display: block;
+    }
+
+    .back {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .product-page {
+      max-width: 900px;
+      margin: auto;
+      padding: 45px 20px 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .product-photo {
+      height: 500px;
+      background: #fff;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      border: 1px solid #eee;
+    }
+
+    .product-photo img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #888;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 10px 0 14px;
+    }
+
+    .description {
+      color: #777;
+      font-size: 15px;
+      line-height: 2;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      font-size: 14px;
+    }
+
+    .button {
+      display: block;
+      background: #242220;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 25px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    footer {
+      background: #242220;
+      color: #fff;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer p {
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .product-page {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .product-photo {
+        height: 380px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+
+    <a href="index.html" class="logo">
+      <img src="veloura-logo.jpg" alt="Veloura">
+    </a>
+
+    <a href="long-socks.html" class="back">
+      ← بازگشت به ساق بلند
+    </a>
+
+  </nav>
+</header>
+
+<main class="product-page">
+
+  <div class="product-photo">
+    <img src="long-sock-1" alt="ساق‌دار دوکش اسپرت">
+  </div>
+
+  <div class="product-info">
+
+    <span class="tag">جوراب • ساق بلند</span>
+
+    <h1>ساق‌دار دوکش اسپرت</h1>
+
+    <p class="description">
+      جوراب ساق‌دار دوکش اسپرت، باکیفیت و مناسب استفاده روزمره.
+    </p>
+
+    <div class="price">
+      ۲۲۰٬۰۰۰ تومان
+    </div>
+
+    <label for="color">انتخاب رنگ:</label>
+
+    <select id="color">
+      <option value="">رنگ را انتخاب کنید</option>
+      <option value="سفید">سفید</option>
+      <option value="قهوه‌ای">قهوه‌ای</option>
+      <option value="کرم">کرم</option>
+      <option value="مشکی">مشکی</option>
+      <option value="سبز">سبز</option>
+      <option value="بنفشی">بنفشی</option>
+      <option value="یاسی">یاسی</option>
+    </select>
+
+    <a href="#" class="button">
+      افزودن به سبد خرید
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+  <h2>Veloura.</h2>
+  <p>فروشگاهی برای انتخاب‌های خاص، ساده و زیبا.</p>
+</footer>
+<script>
+document.querySelector('.button').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const color = document.getElementById('color').value;
+
+  if (!color) {
+    alert('لطفاً رنگ را انتخاب کنید 🎨');
+    return;
+  }
+
+  const product = {
+    name: 'ساق‌دار دوکش اسپرت',
+    price: 220000,
+    image: 'long-sock-1',
+    color: color,
+    quantity: 1
+  };
+
+  localStorage.setItem('velouraCart', JSON.stringify(product));
+
+  alert('محصول به سبد خرید اضافه شد 🛒');
+
+  window.location.href = 'cart.html';
+});
+</script>
+</body>
+</html>

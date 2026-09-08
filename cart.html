@@ -312,11 +312,16 @@ quantity = product.quantity || 1;
     document.getElementById("cartProductName").textContent = product.name;
     document.getElementById("cartProductPrice").textContent =
       product.price.toLocaleString("fa-IR") + " تومان";
-    document.getElementById("cartProductSize").textContent =
-      "سایز: " + product.size;
-    document.getElementById("cartProductColor").textContent =
-      "رنگ: " + product.color;
+    if (product.size) {
+  document.getElementById("cartProductSize").textContent =
+    "سایز: " + product.size;
+} else {
+  document.getElementById("cartProductSize").textContent =
+    "سایز: فری‌سایز";
+}
 
+document.getElementById("cartProductColor").textContent =
+  "رنگ: " + product.color;
     updateCart();
   };
 </script>
